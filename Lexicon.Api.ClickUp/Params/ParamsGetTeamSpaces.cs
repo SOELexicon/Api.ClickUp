@@ -4,51 +4,48 @@ using System.Runtime.Serialization;
 
 namespace Api.ClickUp.Params
 {
+    /// <summary>
+    /// The param object of get team space request
+    /// </summary>
+    public class ParamsGetTeamSpaces
+    {
+        #region Attributes
 
-	/// <summary>
-	/// The param object of get team space request
-	/// </summary>
-	public class ParamsGetTeamSpaces
-	{
-		#region Attributes
+        /// <summary>
+        /// The Team Id
+        /// </summary>
+        [JsonProperty("team_id")]
+        [DataMember(Name = "team_id")]
+        public string TeamId { get; set; }
 
-		/// <summary>
-		/// The Team Id
-		/// </summary>
-		[JsonProperty("team_id")]
-		[DataMember(Name = "team_id")]
-		public string TeamId { get; set; }
+        #endregion Attributes
 
-		#endregion
+        #region Constructor
 
+        /// <summary>
+        /// The constructor of ParamsGetTeamSpace
+        /// </summary>
+        /// <param name="teamId"></param>
+        public ParamsGetTeamSpaces(string teamId)
+        {
+            TeamId = teamId;
+        }
 
-		#region Constructor
+        #endregion Constructor
 
-		/// <summary>
-		/// The constructor of ParamsGetTeamSpace
-		/// </summary>
-		/// <param name="teamId"></param>
-		public ParamsGetTeamSpaces(string teamId)
-		{
-			TeamId = teamId;
-		}
+        #region Public Methods
 
-		#endregion
+        /// <summary>
+        /// Method that validate data insert
+        /// </summary>
+        public void ValidateData()
+        {
+            if (string.IsNullOrEmpty(TeamId))
+            {
+                throw new ArgumentNullException("TeamId");
+            }
+        }
 
-
-		#region Public Methods
-
-		/// <summary>
-		/// Method that validate data insert
-		/// </summary>
-		public void ValidateData()
-		{
-			if (string.IsNullOrEmpty(TeamId))
-			{
-				throw new ArgumentNullException("TeamId");
-			}
-		}
-
-		#endregion
-	}
+        #endregion Public Methods
+    }
 }

@@ -4,53 +4,48 @@ using System.Runtime.Serialization;
 
 namespace Api.ClickUp.Params
 {
+    /// <summary>
+    /// The Param object of create list request
+    /// </summary>
+    public class ParamsCreateFolderList
+    {
+        #region Attributes
 
-	/// <summary>
-	/// The Param object of create list request
-	/// </summary>
-	public class ParamsCreateFolderList
-	{
+        /// <summary>
+        /// The Project Id
+        /// </summary>
+        [JsonProperty("folder_id")]
+        [DataMember(Name = "folder_id")]
+        public string FolderId { get; set; }
 
-		#region Attributes 
+        #endregion Attributes
 
-		/// <summary>
-		/// The Project Id
-		/// </summary>
-		[JsonProperty("folder_id")]
-		[DataMember(Name = "folder_id")]
-		public string FolderId { get; set; }
+        #region Constructor
 
-		#endregion
+        /// <summary>
+        /// The constructor of ParamsCreateList
+        /// </summary>
+        /// <param name="folderId"></param>
+        public ParamsCreateFolderList(string folderId)
+        {
+            FolderId = folderId;
+        }
 
+        #endregion Constructor
 
-		#region Constructor
+        #region Public Methods
 
-		/// <summary>
-		/// The constructor of ParamsCreateList
-		/// </summary>
-		/// <param name="folderId"></param>
-		public ParamsCreateFolderList(string folderId)
-		{
-			FolderId = folderId;
-		}
+        /// <summary>
+        /// Method that validate the data insert
+        /// </summary>
+        public void ValidateData()
+        {
+            if (string.IsNullOrEmpty(FolderId))
+            {
+                throw new ArgumentNullException("FolderId");
+            }
+        }
 
-		#endregion
-
-
-		#region Public Methods
-
-		/// <summary>
-		/// Method that validate the data insert
-		/// </summary>
-		public void ValidateData()
-		{
-			if (string.IsNullOrEmpty(FolderId))
-			{
-				throw new ArgumentNullException("FolderId");
-			}
-		}
-
-		#endregion
-
-	}
+        #endregion Public Methods
+    }
 }

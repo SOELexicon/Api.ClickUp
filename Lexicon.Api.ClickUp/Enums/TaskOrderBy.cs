@@ -1,12 +1,10 @@
 ﻿namespace Api.ClickUp.Enums
 {
-
     /// <summary>
     /// Enum that rappresent the possible values for order by of a Task
     /// </summary>
     public enum TaskOrderBy
     {
-
         /// <summary>
         /// Order by Id of the Task
         /// </summary>
@@ -27,5 +25,4 @@
         /// </summary>
         DueDate
     }
-
 }

@@ -1,15 +1,14 @@
-﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
-namespace Api.ClickUp.Responses.Model
+namespace Api.ClickUp.Responses.ResponseModel
 {
-
     /// <summary>
     /// Model object of List information response
     /// </summary>
     public class ResponseModelItem
-		: Helpers.IResponse
-	{
+        : Helpers.IResponse
+    {
         [JsonProperty("id")]
         public string Id { get; set; }
 
@@ -18,7 +17,8 @@ namespace Api.ClickUp.Responses.Model
 
         [JsonProperty("orderindex")]
         public int OrderIndex { get; set; }
-		[JsonProperty("assignee")]
+
+        [JsonProperty("assignee")]
         public ResponseModelUser Assignee { get; set; }
 
         [JsonProperty("group_assignee")]
@@ -35,6 +35,5 @@ namespace Api.ClickUp.Responses.Model
 
         [JsonProperty("children")]
         public List<string> Children { get; set; }
-     
-	}
+    }
 }

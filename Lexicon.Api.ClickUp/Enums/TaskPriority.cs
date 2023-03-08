@@ -1,12 +1,10 @@
 ﻿namespace Api.ClickUp.Enums
 {
-
     /// <summary>
     /// Enum that rappresent the possible value of priority of Tasks
     /// </summary>
     public enum TaskPriority
     {
-
         /// <summary>
         /// Priority: Urgent [1]
         /// </summary>
@@ -26,7 +24,5 @@
         /// Priority: Low [4]
         /// </summary>
         Low = 4
-
     }
-
 }

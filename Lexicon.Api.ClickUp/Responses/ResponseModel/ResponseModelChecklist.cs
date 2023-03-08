@@ -1,15 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
-namespace Api.ClickUp.Responses.Model
+namespace Api.ClickUp.Responses.ResponseModel
 {
-
     /// <summary>
     /// Model object of List information response
     /// </summary>
-    /// 
-    /// 
+    ///
+    ///
     public class ResponseModeChecklist : Helpers.IResponse
     {
         [JsonProperty("id")]
@@ -39,5 +38,4 @@ namespace Api.ClickUp.Responses.Model
         [JsonProperty("items")]
         public List<ResponseModelItem> Items { get; set; }
     }
-
 }

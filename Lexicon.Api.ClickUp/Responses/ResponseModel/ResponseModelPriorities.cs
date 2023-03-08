@@ -1,25 +1,24 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Api.ClickUp.Responses.Model
+namespace Api.ClickUp.Responses.ResponseModel
 {
+    /// <summary>
+    /// Model object of Priorities information response
+    /// </summary>
+    public class ResponseModelPriorities
+        : Helpers.IResponse
+    {
+        /// <summary>
+        /// Check if enabled Priorities
+        /// </summary>
+        [JsonProperty("enabled")]
+        public bool? Enabled { get; set; }
 
-	/// <summary>
-	/// Model object of Priorities information response
-	/// </summary>
-	public class ResponseModelPriorities
-		: Helpers.IResponse
-	{
-		/// <summary>
-		/// Check if enabled Priorities
-		/// </summary>
-		[JsonProperty("enabled")]
-		public bool? Enabled { get; set; }
-
-		/// <summary>
-		/// List of Model Priority with priorities information
-		/// </summary>
-		[JsonProperty("priorities")]
-		public List<ResponseModelPriority> Priorities { get; set; }
-	}
+        /// <summary>
+        /// List of Model Priority with priorities information
+        /// </summary>
+        [JsonProperty("priorities")]
+        public List<ResponseModelPriority> Priorities { get; set; }
+    }
 }

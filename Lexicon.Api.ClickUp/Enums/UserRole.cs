@@ -1,12 +1,10 @@
 ﻿namespace Api.ClickUp.Enums
 {
-
     /// <summary>
     /// Enum that rappresent the possible value of user roles in Team
     /// </summary>
     public enum UserRole
     {
-
         /// <summary>
         /// Role: Owner [1]
         /// </summary>
@@ -26,7 +24,5 @@
         /// Role: Guest [4]
         /// </summary>
         Guest = 4
-
     }
-
 }

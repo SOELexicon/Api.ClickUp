@@ -1,71 +1,75 @@
-﻿using System.Net;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Serializers.NewtonsoftJson;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Api.ClickUp.Helpers
 {
-	public class RestSharperHelper
-	{
-		public static ResponseGeneric<TResponseSuccess, TResponseError> ExecuteRequest<TResponseSuccess, TResponseError>(IRestClient client, IRestRequest request, params JsonConverter[] converters)
-			where TResponseSuccess : IResponse
-			where TResponseError : IResponse
-		{
-			// attach the JSON.NET serializer for RestSharp
-			client.UseNewtonsoftJson(new JsonSerializerSettings {
-				Converters = converters,
-				DateParseHandling = DateParseHandling.None
-			});
+    public class RestSharperHelper
+    {
+        public static ResponseGeneric<TResponseSuccess, TResponseError> ExecuteRequest<TResponseSuccess, TResponseError>(IRestClient client, IRestRequest request, params JsonConverter[] converters)
+            where TResponseSuccess : IResponse
+            where TResponseError : IResponse
+        {
+            // attach the JSON.NET serializer for RestSharp
+            client.UseNewtonsoftJson(new JsonSerializerSettings
+            {
+                Converters = converters,
+                DateParseHandling = DateParseHandling.None
+            });
 
-			// execute the request
-			IRestResponse response = client.Execute(request);
-			var result = new ResponseGeneric<TResponseSuccess, TResponseError>
-			{
-				RequestStatus = response.StatusCode
-			};
-			switch (result.RequestStatus)
-			{
-				case HttpStatusCode.OK:
-					result.ResponseSuccess = JsonConvert.DeserializeObject<TResponseSuccess>(response.Content);
-					break;
-				default:
-					result.ResponseError = JsonConvert.DeserializeObject<TResponseError>(response.Content);
-					break;
-			}
+            // execute the request
+            IRestResponse response = client.Execute(request);
+            var result = new ResponseGeneric<TResponseSuccess, TResponseError>
+            {
+                RequestStatus = response.StatusCode
+            };
+            switch (result.RequestStatus)
+            {
+                case HttpStatusCode.OK:
+                    result.ResponseSuccess = JsonConvert.DeserializeObject<TResponseSuccess>(response.Content);
+                    break;
 
-			return result;
-		}
+                default:
+                    result.ResponseError = JsonConvert.DeserializeObject<TResponseError>(response.Content);
+                    break;
+            }
 
-		public static async Task<ResponseGeneric<TResponseSuccess, TResponseError>> ExecuteRequestAsync<TResponseSuccess, TResponseError>(IRestClient client, IRestRequest request)
-			where TResponseSuccess : IResponse
-			where TResponseError : IResponse
-		{
-			// attach the JSON.NET serializer for RestSharp
-			client.UseNewtonsoftJson();
+            return result;
+        }
 
-			ResponseGeneric<TResponseSuccess, TResponseError> result = null;
+        public static async Task<ResponseGeneric<TResponseSuccess, TResponseError>> ExecuteRequestAsync<TResponseSuccess, TResponseError>(IRestClient client, IRestRequest request)
+            where TResponseSuccess : IResponse
+            where TResponseError : IResponse
+        {
+            // attach the JSON.NET serializer for RestSharp
+            client.UseNewtonsoftJson();
 
-			// execute the request
-			var taskCompletionSource = new TaskCompletionSource<ResponseGeneric<TResponseSuccess, TResponseError>>();
-			var task = client.ExecuteAsync(request, response => {
-				result = new ResponseGeneric<TResponseSuccess, TResponseError>
-				{
-					RequestStatus = response.StatusCode
-				};
-				switch (result.RequestStatus)
-				{
-					case HttpStatusCode.OK:
-						result.ResponseSuccess = JsonConvert.DeserializeObject<TResponseSuccess>(response.Content);
-						break;
-					default:
-						result.ResponseError = JsonConvert.DeserializeObject<TResponseError>(response.Content);
-						break;
-				}
-				taskCompletionSource.SetResult(result);
-			});
+            ResponseGeneric<TResponseSuccess, TResponseError> result = null;
 
-			return await taskCompletionSource.Task;
-		}
-	}
+            // execute the request
+            var taskCompletionSource = new TaskCompletionSource<ResponseGeneric<TResponseSuccess, TResponseError>>();
+            var task = client.ExecuteAsync(request, response =>
+            {
+                result = new ResponseGeneric<TResponseSuccess, TResponseError>
+                {
+                    RequestStatus = response.StatusCode
+                };
+                switch (result.RequestStatus)
+                {
+                    case HttpStatusCode.OK:
+                        result.ResponseSuccess = JsonConvert.DeserializeObject<TResponseSuccess>(response.Content);
+                        break;
+
+                    default:
+                        result.ResponseError = JsonConvert.DeserializeObject<TResponseError>(response.Content);
+                        break;
+                }
+                taskCompletionSource.SetResult(result);
+            });
+
+            return await taskCompletionSource.Task;
+        }
+    }
 }

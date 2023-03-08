@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace Api.ClickUp.Responses.Model
+namespace Api.ClickUp.Responses.ResponseModel
 {
     /// <summary>
     /// Model object of Time Tracking information response

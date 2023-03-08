@@ -2,7 +2,7 @@
 using Api.ClickUp.Params;
 using Api.ClickUp.Requests;
 using Api.ClickUp.Responses;
-using Api.ClickUp.Responses.Model;
+using Api.ClickUp.Responses.ResponseModel;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -27,6 +27,7 @@ namespace Api.ClickUp
         /// Base Address of API call
         /// </summary>
         private static Uri _baseAddress { get; set; }
+
         #endregion Private Attributes
 
         #region Constructors
@@ -192,6 +193,7 @@ namespace Api.ClickUp
             ResponseGeneric<ResponseTeamSpaces, ResponseError> result = RestSharperHelper.ExecuteRequest<ResponseTeamSpaces, ResponseError>(client, request);
             return result;
         }
+
         #endregion Spaces
 
         #region Folders
@@ -231,6 +233,7 @@ namespace Api.ClickUp
             ResponseGeneric<ResponseSpaceFolders, ResponseError> result = RestSharperHelper.ExecuteRequest<ResponseSpaceFolders, ResponseError>(client, request);
             return result;
         }
+
         #endregion Folders
 
         #region Lists
@@ -324,6 +327,7 @@ namespace Api.ClickUp
             ResponseGeneric<ResponseModelList, ResponseError> result = RestSharperHelper.ExecuteRequest<ResponseModelList, ResponseError>(client, request);
             return result;
         }
+
         #endregion Lists
 
         #region Tasks
@@ -415,6 +419,7 @@ namespace Api.ClickUp
             ResponseGeneric<ResponseTasks, ResponseError> result = RestSharperHelper.ExecuteRequest<ResponseTasks, ResponseError>(client, request);
             return result;
         }
+
         #endregion Tasks
 
         #region Webhooks
@@ -454,6 +459,7 @@ namespace Api.ClickUp
             ResponseGeneric<ResponseWebhooks, ResponseError> result = RestSharperHelper.ExecuteRequest<ResponseWebhooks, ResponseError>(client, request);
             return result;
         }
+
         #endregion Webhooks
 
         #region Time Tracking
@@ -566,6 +572,7 @@ namespace Api.ClickUp
             // execute the request
             return RestSharperHelper.ExecuteRequestAsync<ResponseTeamSpaces, ResponseError>(client, request);
         }
+
         #endregion Spaces
 
         #region Folders
@@ -603,6 +610,7 @@ namespace Api.ClickUp
             // execute the request
             return RestSharperHelper.ExecuteRequestAsync<ResponseSpaceFolders, ResponseError>(client, request);
         }
+
         #endregion Folders
 
         #region Lists
@@ -691,6 +699,7 @@ namespace Api.ClickUp
             // execute the request
             return RestSharperHelper.ExecuteRequestAsync<ResponseModelList, ResponseError>(client, request);
         }
+
         #endregion Lists
 
         #region Time Tracking
@@ -782,6 +791,7 @@ namespace Api.ClickUp
             // execute the request
             return RestSharperHelper.ExecuteRequestAsync<ResponseTasks, ResponseError>(client, request);
         }
+
         #endregion Tasks
 
         #region Webhooks
@@ -819,6 +829,7 @@ namespace Api.ClickUp
             // execute the request
             return RestSharperHelper.ExecuteRequestAsync<ResponseWebhooks, ResponseError>(client, request);
         }
+
         #endregion Webhooks
 
         #endregion API Methods Async

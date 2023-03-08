@@ -4,51 +4,48 @@ using System.Runtime.Serialization;
 
 namespace Api.ClickUp.Params
 {
+    /// <summary>
+    /// The param object of Get Space Folders request
+    /// </summary>
+    public class ParamsGetSpaceFolders
+    {
+        #region Attributes
 
-	/// <summary>
-	/// The param object of Get Space Folders request
-	/// </summary>
-	public class ParamsGetSpaceFolders
-	{
-		#region Attributes
+        /// <summary>
+        /// The Space Id
+        /// </summary>
+        [JsonProperty("space_id")]
+        [DataMember(Name = "space_id")]
+        public string SpaceId { get; set; }
 
-		/// <summary>
-		/// The Space Id 
-		/// </summary>
-		[JsonProperty("space_id")]
-		[DataMember(Name = "space_id")]
-		public string SpaceId { get; set; }
+        #endregion Attributes
 
-		#endregion
+        #region Constructor
 
+        /// <summary>
+        /// The constructor of ParamsGetSpaceProjects
+        /// </summary>
+        /// <param name="spaceId"></param>
+        public ParamsGetSpaceFolders(string spaceId)
+        {
+            SpaceId = spaceId;
+        }
 
-		#region Constructor
+        #endregion Constructor
 
-		/// <summary>
-		/// The constructor of ParamsGetSpaceProjects
-		/// </summary>
-		/// <param name="spaceId"></param>
-		public ParamsGetSpaceFolders(string spaceId)
-		{
-			SpaceId = spaceId;
-		}
+        #region Public Methods
 
-		#endregion
+        /// <summary>
+        /// Method that validate the data insert
+        /// </summary>
+        public void ValidateData()
+        {
+            if (string.IsNullOrEmpty(SpaceId))
+            {
+                throw new ArgumentNullException("SpaceId");
+            }
+        }
 
-
-		#region Public Methods
-
-		/// <summary>
-		/// Method that validate the data insert
-		/// </summary>
-		public void ValidateData()
-		{
-			if (string.IsNullOrEmpty(SpaceId))
-			{
-				throw new ArgumentNullException("SpaceId");
-			}
-		}
-
-		#endregion
-	}
+        #endregion Public Methods
+    }
 }

@@ -3,13 +3,11 @@ using System;
 
 namespace Api.ClickUp.Helpers
 {
-
     /// <summary>
     /// Json Converter class of TimeSpan object to / from milliseconds time
     /// </summary>
     public class JsonConverterTimeSpanMilliseconds : JsonConverter
     {
-
         /// <summary>
         /// Check if can convert this type of object. (Can only convert TimeSpan)
         /// </summary>
@@ -44,7 +42,5 @@ namespace Api.ClickUp.Helpers
         {
             serializer.Serialize(writer, ((TimeSpan)value).TotalMilliseconds);
         }
-
     }
-
 }

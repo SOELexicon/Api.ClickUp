@@ -1,40 +1,37 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Api.ClickUp.Requests.Model
+namespace Api.ClickUp.Requests.RequestModel
 {
+    /// <summary>
+    /// Support Models for assigness user at the task
+    /// </summary>
+    public class RequestModelSupportAssignees
+    {
+        #region Attributes
 
-	/// <summary>
-	/// Support Models for assigness user at the task
-	/// </summary>
-	public class RequestModelSupportAssignees
-	{
+        /// <summary>
+        /// List of integer id of the user added to the task
+        /// </summary>
+        [JsonProperty("add")]
+        public List<long> Add { get; set; }
 
-		#region Attributes
+        /// <summary>
+        /// List of integer id of the user removed to the task
+        /// </summary>
+        [JsonProperty("rem")]
+        public List<long> Rem { get; set; }
 
-		/// <summary>
-		/// List of integer id of the user added to the task
-		/// </summary>
-		[JsonProperty("add")]
-		public List<long> Add { get; set; }
+        #endregion Attributes
 
+        #region Public Methods
 
-		/// <summary>
-		/// List of integer id of the user removed to the task
-		/// </summary>
-		[JsonProperty("rem")]
-		public List<long> Rem { get; set; }
+        /// <summary>
+        /// Validation method of data
+        /// </summary>
+        public void ValidateData()
+        { }
 
-		#endregion
-
-
-		#region Public Methods
-
-		/// <summary>
-		/// Validation method of data
-		/// </summary>
-		public void ValidateData() { }
-
-		#endregion
-	}
+        #endregion Public Methods
+    }
 }
