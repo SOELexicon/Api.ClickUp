@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
-using Api.ClickUp.Responses.Model;
 using System.Collections.Generic;
+using Api.ClickUp.Responses.ResponseModel;
 
 namespace Api.ClickUp.Responses
 {
 
-	/// <summary>
-	/// Response object of the method GetTasks()
-	/// </summary>
-	public class ResponseTasks
+    /// <summary>
+    /// Response object of the method GetTasks()
+    /// </summary>
+    public class ResponseTasks
 		: Helpers.IResponse
 	{
 		/// <summary>

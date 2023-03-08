@@ -1,15 +1,15 @@
 ﻿using Newtonsoft.Json;
 using Api.ClickUp.Enums;
-using Api.ClickUp.Requests.Model;
 using System;
 using Api.ClickUp.Helpers;
+using Api.ClickUp.Requests.RequestModel;
 
 namespace Api.ClickUp.Requests
 {
-	/// <summary>
-	/// Request object for method EditTask()
-	/// </summary>
-	public class RequestEditTask
+    /// <summary>
+    /// Request object for method EditTask()
+    /// </summary>
+    public class RequestEditTask
 	{
 		#region Attributes
 

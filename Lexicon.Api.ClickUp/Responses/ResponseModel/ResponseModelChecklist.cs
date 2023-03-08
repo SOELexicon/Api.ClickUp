@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Api.ClickUp.Responses.Model
+namespace Api.ClickUp.Responses.ResponseModel
 {
 
     /// <summary>

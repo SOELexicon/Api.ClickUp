@@ -10,7 +10,7 @@ using System.Web;
 /// Parameter Extensions By Craig Wright
 /// Used to get the parameters from a Params object and return them as RestSharp Parameters
 /// </summary>
-namespace Api.ClickUp.Params
+namespace Api.ClickUp.Helpers
 {
     public static class ParamsExtensions
     {
@@ -34,6 +34,6 @@ namespace Api.ClickUp.Params
 
             return parameters;
         }
-    
+
     }
 }

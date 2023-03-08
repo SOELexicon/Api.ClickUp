@@ -2,7 +2,7 @@
 using Api.ClickUp.Params;
 using Api.ClickUp.Requests;
 using Api.ClickUp.Responses;
-using Api.ClickUp.Responses.Model;
+using Api.ClickUp.Responses.ResponseModel;
 using RestSharp;
 using System;
 using System.Collections.Generic;

@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using Api.ClickUp.Responses.Model;
+using Api.ClickUp.Responses.ResponseModel;
 
 namespace Api.ClickUp.Responses
 {
 
-	/// <summary>
-	/// Response object of the method GetTeamByID()
-	/// </summary>
-	public class ResponseTeam
+    /// <summary>
+    /// Response object of the method GetTeamByID()
+    /// </summary>
+    public class ResponseTeam
 		: Helpers.IResponse
 	{
 		/// <summary>

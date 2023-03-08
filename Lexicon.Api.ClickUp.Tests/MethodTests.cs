@@ -4,19 +4,19 @@ using Api.ClickUp.Helpers;
 using Api.ClickUp.Params;
 using Api.ClickUp.Requests;
 using Api.ClickUp.Responses;
-using Api.ClickUp.Responses.Model;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using Api.ClickUp.Responses.ResponseModel;
 
 namespace Api.ClickUp.Tests
 {
 
-	/// <summary>
-	/// Class for tests of object 'Methods' in 'Api.ClickUp'
-	/// </summary>
-	[TestFixture]
+    /// <summary>
+    /// Class for tests of object 'Methods' in 'Api.ClickUp'
+    /// </summary>
+    [TestFixture]
 	public class MethodTests
 	{
 		#region Private Test Variables

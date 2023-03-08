@@ -1,16 +1,16 @@
 ﻿using Newtonsoft.Json;
-using Api.ClickUp.Responses.Model;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using Api.ClickUp.Responses.ResponseModel;
 
 namespace Api.ClickUp.Responses
 {
 
-	/// <summary>
-	/// Response object of the method GetAuthorizedTeams()
-	/// </summary>
-	[Serializable]
+    /// <summary>
+    /// Response object of the method GetAuthorizedTeams()
+    /// </summary>
+    [Serializable]
 	[DataContract]
 	public class ResponseAuthorizedTeams
 		: Helpers.IResponse

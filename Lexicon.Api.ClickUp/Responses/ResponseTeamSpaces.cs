@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
-using Api.ClickUp.Responses.Model;
 using System.Collections.Generic;
+using Api.ClickUp.Responses.ResponseModel;
 
 namespace Api.ClickUp.Responses
 {
 
-	/// <summary>
-	/// Response object of the method GetTeamSpaces()
-	/// </summary>
-	public class ResponseTeamSpaces
+    /// <summary>
+    /// Response object of the method GetTeamSpaces()
+    /// </summary>
+    public class ResponseTeamSpaces
 		: Helpers.IResponse
 	{
 		/// <summary>

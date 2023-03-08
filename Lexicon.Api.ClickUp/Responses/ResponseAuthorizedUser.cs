@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using Api.ClickUp.Responses.Model;
+using Api.ClickUp.Responses.ResponseModel;
 
 namespace Api.ClickUp.Responses
 {
 
-	/// <summary>
-	/// Response object of the method GetAuthorizedUser()
-	/// </summary>
-	public class ResponseAuthorizedUser
+    /// <summary>
+    /// Response object of the method GetAuthorizedUser()
+    /// </summary>
+    public class ResponseAuthorizedUser
 		: Helpers.IResponse
 	{
 		/// <summary>

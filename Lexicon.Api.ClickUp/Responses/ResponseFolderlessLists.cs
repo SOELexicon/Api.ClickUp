@@ -1,14 +1,14 @@
 ﻿using Newtonsoft.Json;
-using Api.ClickUp.Responses.Model;
 using System.Collections.Generic;
+using Api.ClickUp.Responses.ResponseModel;
 
 namespace Api.ClickUp.Responses
 {
 
-	/// <summary>
-	/// Response object of the method GetFolderlessLists()
-	/// </summary>
-	public class ResponseFolderlessLists
+    /// <summary>
+    /// Response object of the method GetFolderlessLists()
+    /// </summary>
+    public class ResponseFolderlessLists
 		: Helpers.IResponse
 	{
 		/// <summary>
