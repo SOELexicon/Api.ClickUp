@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Chinchilla.ClickUp\Api.ClickUp.csproj" />
+		<ProjectReference Include="..\Lexicon.Api.ClickUp\Api.ClickUp.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

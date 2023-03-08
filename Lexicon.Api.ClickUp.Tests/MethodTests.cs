@@ -14,7 +14,7 @@ namespace Api.ClickUp.Tests
 {
 
 	/// <summary>
-	/// Class for tests of object 'ClickUpAPI' in 'Api.ClickUp'
+	/// Class for tests of object 'Methods' in 'Api.ClickUp'
 	/// </summary>
 	[TestFixture]
 	public class MethodTests
