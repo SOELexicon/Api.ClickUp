@@ -3,12 +3,19 @@ using Api.ClickUp.Helpers;
 using Api.ClickUp.Params;
 using Api.ClickUp.Requests;
 using Api.ClickUp.Responses;
+<<<<<<< HEAD
 using Api.ClickUp.Responses.ResponseModel;
 using NUnit.Framework;
+=======
+>>>>>>> 94034a3c1682cc12065299b6eecdf402258a50d5
 using System;
 using System.Collections.Generic;
 using System.Linq;
+<<<<<<< HEAD
 using System.Threading.Tasks;
+=======
+using Api.ClickUp.Responses.ResponseModel;
+>>>>>>> 94034a3c1682cc12065299b6eecdf402258a50d5
 
 namespace Api.ClickUp.Tests
 {
@@ -20,10 +27,20 @@ namespace Api.ClickUp.Tests
     {
         #region Private Test Variables
 
+<<<<<<< HEAD
         /// <summary>
         /// Access Token of ClickUp, used for test request
         /// </summary>
         private static readonly string _accessToken = "pk_1O9TG5WQIC8E656880JH8KITR28W4V3A";
+=======
+    /// <summary>
+    /// Class for tests of object 'Methods' in 'Api.ClickUp'
+    /// </summary>
+    [TestFixture]
+	public class MethodTests
+	{
+		#region Private Test Variables
+>>>>>>> 94034a3c1682cc12065299b6eecdf402258a50d5
 
         /// <summary>
         /// The Team Id used for test request

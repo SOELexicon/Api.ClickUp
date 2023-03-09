@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 ﻿using Api.ClickUp.Enums;
 using Api.ClickUp.Helpers;
 using Api.ClickUp.Requests.RequestModel;
 using Newtonsoft.Json;
 using System;
+=======
+﻿using Newtonsoft.Json;
+using Api.ClickUp.Enums;
+using System;
+using Api.ClickUp.Helpers;
+using Api.ClickUp.Requests.RequestModel;
+>>>>>>> 94034a3c1682cc12065299b6eecdf402258a50d5
 
 namespace Api.ClickUp.Requests
 {
@@ -10,8 +18,13 @@ namespace Api.ClickUp.Requests
     /// Request object for method EditTask()
     /// </summary>
     public class RequestEditTask
+<<<<<<< HEAD
     {
         #region Attributes
+=======
+	{
+		#region Attributes
+>>>>>>> 94034a3c1682cc12065299b6eecdf402258a50d5
 
         /// <summary>
         /// Name of the task

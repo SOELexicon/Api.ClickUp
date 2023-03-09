@@ -17,7 +17,10 @@ namespace Api.ClickUp.Responses.ResponseModel
 
         [JsonProperty("orderindex")]
         public int OrderIndex { get; set; }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 94034a3c1682cc12065299b6eecdf402258a50d5
         [JsonProperty("assignee")]
         public ResponseModelUser Assignee { get; set; }
 
@@ -35,5 +38,9 @@ namespace Api.ClickUp.Responses.ResponseModel
 
         [JsonProperty("children")]
         public List<string> Children { get; set; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94034a3c1682cc12065299b6eecdf402258a50d5
     }
 }
